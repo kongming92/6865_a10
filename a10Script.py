@@ -11,7 +11,8 @@ chess5x5 = np.load('./Input/chess/chess5x5.npy')
 # chess17x17 = np.load('./Input/chess/chess17x17.npy')
 
 #
-bugStack = np.load('./Input/BugStack.npy')
+# bugStack = np.load('./Input/BugStack.npy')
+# lego = np.load('./Input/lego17x17.npy')
 
 # lytro1 = np.load('counter1.npy')
 
@@ -53,27 +54,23 @@ def testSharpness():
         print 'sharp', sharp.shape
         io.imwrite(sharp, 'sharp'+str(i)+'.png')
 
+# testEpiSlice(lego, 100, "legoEpiSlice")
+# legoStack, legoStackName = testRackFocus(lego, "legoStack", 15, -40.0, 8.0)
+# testFullFocusLinear(legoStack, "legoFullFocus")
+
 #testApertureView(chess3x3, "chess3x3ApertureViews")
-#testApertureView(chess5x5, "chess5x5ApertureViews")
+testApertureView(chess5x5, "chess5x5ApertureViews")
 #testApertureView(chess17x17, "chess17x17ApertureViews")
-#testEpiSlice(chess17x17, 100, "chess17x17Epislicey100")
-# testRefocusLF(chess17x17, 0.0, "chess17x17Focus0")
-# testRefocusLF(chess5x5, 0.0, "chess5x5Focus0")
-# testRefocusLF(chess5x5, -2.0, "chess5x5Focusminus2")
-# testRefocusLF(chess5x5, -5.0, "chess5x5Focusminus5")
-# testRefocusLF(chess5x5, -7.0, "chess5x5Focusminus7")
-# testRefocusLF(chess5x5, 2.0, "chess5x5Focus2")
-# testRefocusLF(chess5x5, 5.0, "chess5x5Focus5")
-# testRefocusLF(chess5x5, 7.0, "chess5x5Focus7")
+testEpiSlice(chess5x5, 100, "chess5x5Epislicey100")
 
 #testSharpness()
 chessStack5, chessStack5Name = testRackFocus(chess5x5, "chess5x5_new")
-saveNP(chessStack5, chessStack5Name)
+# saveNP(chessStack5, chessStack5Name)
 # chessStack17, chessStack17Name = testRackFocus(chess17x17, "chess17x17_new")
 # saveNP(chessStack17, chessStack17Name)
 
 #chessStack17 = np.load('myLFs/chess17x17_min-7.0_max2.0nIms_15.npy')
-printFocalStack(chessStack5, "testChessStack")
+# printFocalStack(chessStack5, "testChessStack")
 printSharpnessStack(chessStack5, 'testChessSharpness')
 testFullFocusLinear(chessStack5, "chessStack5")
 # testFullFocusLinear(bugStack, "bugStack")
